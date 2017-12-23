@@ -1,0 +1,468 @@
+/* This is a Comment (different syntax compared to HTML) */
+
+/* ===================================================================
+------------Reset------------ 
+======================================================================
+The asterisk * selector relates to all elements on a HTML page. You can reset the default browser CSS for elements using a reset and then add in your own CSS - for example:
+
+*{
+  margin: 0;
+  padding:0;
+}
+
+=====================================================================
+------------Global Styles------------ 
+======================================================================
+CSS executes the code from top to bottom and therefore previous styles will be overriden the latter styles. This is why we place Global CSS at the top.
+*/
+
+.clr{
+  clear: both;
+}
+
+.button{
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+/* Add a hover status effect to the button */
+.button:hover{
+  background-color: red;
+  color: #fff;
+}
+
+/* ===================================================================
+------------Adding External CSS Example ------------
+====================================================================== */
+h1#ExternalCSS{
+  color:purple
+}
+
+
+/* ===================================================================
+------------CSS Selectors/Format------------
+======================================================================
+  h1{
+    brackground-color: yellow;
+  }
+
+
+  Element           = Selector (you can select a class/ID to apply to specific HTML elements)
+  {                 = Declaration Start
+  background-color  = Property
+  :                 = Property/Value Separator
+  yellow            = Value
+  ;                 = Declaration Separator
+  }                 = Declaration End
+
+====================================================================== */
+
+
+/* CSS that will effect everything within the body element tags */
+Body{
+  background-color: #f4f4f4;
+  color:#555555;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2.5em;
+  margin: 0;
+}
+
+/* ===================================================================
+------------Colors in CSS------------
+======================================================================
+We can select colors by:
+1. Color Name         (e.g. red)
+2. HTML5 Color Names  (e.g. coral)
+3. Hexadecimal        (e.g. #00ff00)
+4. RGB                (e.g. rgb(0,0,225))
+
+======================================================================
+------------Fonts------------
+======================================================================
+1. Web-safe Fonts = we do not need to import the font-family 
+  Exmaple:
+  Arial Black, Gadget, sans-serif;
+  Bookman Old Style, serif;
+  Comic Sans MS, cursive, sans-serif;
+  Courier New, Courier, monospace
+2. Special-Fonts = special fonts that require links to the HTML file in order to use the font for example we can <link href=""> to Google Fonts.
+  You would add the link tag within the <Head></Head> tags of the HTML document. Example:
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  Then you would add the font-family attribute as normal. Example:
+    font-family: 'Sofia'; 
+
+3. Font size by default is 16px but we can change this using CSS.
+
+4. The shortcut for fonts which combines the font-family, font size and wieght is:
+    font: normal 14 Arial, Helvatica, sans-serif
+
+5. line-height adds spacing between lines.
+
+*/
+
+P.specialFonts{
+  font-family: 'Sofia';
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Same as above */
+p.fontShorthand{
+  font: normal 14px Courier New, Courier, monospace;
+  color: #fff;
+  background: #333;
+}
+
+/* ===================================================================
+------------Unit Measurements------------
+======================================================================
+em  = Relative to the font-size of the element (2em means 2 times the size of the current font)
+rem = Relative to font-size of the root element
+ex  = Relative to the x-height of the current font (rarely used)
+%   = Percentge
+cm  = Centimeters
+mm  = Millimeters
+in  = inches (1in = 96px = 2.54cm)
+px* = pixels (1px = 1/96th of 1in)
+pt  = points (1pt = 1/72 of 1in)
+pc  = picas (1pc = 12 pt)
+
+* Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
+
+There are many more - refer to https://www.w3schools.com/cssref/css_units.asp
+
+
+======================================================================
+------------ID vs Class------------
+======================================================================
+ID and Class have no real difference for CSS; however, in HTML ID's are unique and can only be used once for an element whereas Classes do not need to be unique and can be reused multiple times across different elements.
+
+To reference an ID we use # followed by the ID name whereas for Class we would use . followed by the Class Name. For example:
+
+ID = h1#ExternalCSS{}
+Class = P.specialFonts{}
+
+====================================================================== */
+
+
+.container{
+  width: 80%; 
+  margin: auto;
+  border-right: 5px red solid;
+  border-width: 3px; /*applies to all borders*/
+  border-right-width: 10px;
+  border-right-style: dotted;
+  padding: 40px;
+  padding-top: 20px;
+}
+
+/* ===================================================================
+------------Width & Margin------------
+======================================================================
+Margin adds a spacing around the sides. Auto applies to all sides. 
+You can manipulate the width (how wide) of an element using the Width property for example:
+  980px - fix the width to 980 pixels wide (this is not responsive) c.f
+  80% - this makes the width responsive.
+
+======================================================================
+------------Margin & Padding------------
+======================================================================
+The Box Model:
+                                                  Top Margin
+                                                  Top Border
+                                                  Top Padding
+      Left Margin | Left Border | Left Padding |    Content   | Right Padding | Right Border | Right Margin
+                                                Bottom Padding
+                                                Bottom Border
+                                                Bottom Margin
+
+Margin and Padding relates to the spacing around the element/content. Padding relates to the space on the inside of the element while Margin relates to the space on the outside of the element. The Border is the space inbetween the margin and padding.
+
+There are two ways to writing Margin and Headings:
+  Longhand:
+    P{
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+  Shorthand (Margin Pixels Order = Top, Right, Bottom, Left):
+  p{
+    margin: 5px 10px 5px 10px;
+  }
+
+  or in cases where the top & bottom are the same and left & right are the same 
+  (Margin Pixels Order = Top/Bottom, Left/Right)
+
+  p{
+    margin: 5px 10px;
+  }
+
+  or
+
+  if all the sides are the same
+
+  p{
+    margin: 5px;
+  }
+
+======================================================================
+------------Border Properties------------ 
+======================================================================
+Border-width = applies to all sides (top, right, bottom, left)
+Border-style = applies to all sides(top, right, bottom, left)
+You can specify individual sides in the same way as you can with margin and padding mentioned above.
+
+
+======================================================================
+------------Text Decorations------------
+======================================================================
+Text decorations as the name suggests adds decorations to the text - examples provided below:
+====================================================================== */
+
+  p.textDecorations{
+   font-family: Tahoma;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: underline;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   word-spacing: 1em;
+   border: 3px dotted #ccc;
+   padding: 20px;
+   margin: 20px 0;
+  }
+
+
+/* ===================================================================
+------------Categories List CSS Example------------
+====================================================================== */
+
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+/*we can also change the state of an element - in the example below, links have a hover state */
+  a:hover{
+    color: red;
+  }
+  a:active{
+    color: green;
+  }
+/* Change the color of visited links.
+  a:visited{
+    color: coral;
+  }
+*/
+
+  .categories{
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .categories h2{
+    text-align: center;
+  }
+
+  .categories ul{
+    padding: 0;
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  .categories li{
+    padding-bottom: 8px;
+    border-bottom: dotted 1px #333;
+    list-style-image: url('../images/check.png');
+  }
+
+
+/* ===================================================================
+------------Form CSS Example------------
+====================================================================== */
+
+  .my-form{
+    padding: 20px;
+  }
+
+  .my-form .form-group{
+    padding-bottom: 15px;
+  }
+
+/* Labels are in-line elements and so we can make the block elements i.e. appear on their own lines sing css */
+  .my-form label{
+    display: block;
+  }
+
+/* The input will relate to any input for example a radio buttons. Note this does not target the message box as the message box is a textarea element and not a input element. We can target the type to exclude the submit input element as shown in the example below. */
+  .my-form input[type="text"], .my-form textarea{
+    padding: 8px;
+    width: 100%;
+  }
+
+/* If you want this to be global i.e. apply to all classes of buttons all we need to do is change the selector to .button which you would put towrds the top (global area) - for example:
+  
+  .button{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+  }
+
+apply the class to the element in the HTML e.g.
+  <input class="button" type="submit" value="Submit" name="">
+
+*/
+
+  .my-form input[type="submit"]{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+  }
+/* Add a hover status effect to the button */
+  .my-form input[type="submit"]:hover{
+    background-color: red;
+    color: #fff;
+  }
+
+
+/* ===================================================================
+------------Alignmnet & Floating------------
+======================================================================
+By default flow of block items is one above the other. However using CSS we can float block items to the side - for example: 
+*/
+  .block{
+    float: left;
+    width: 33%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+/*float property allows block item sit side by side as long as their formatting allows them to have enough space as the browser screen allows. We can add box-sizing to take into account of the padding and border properties when considering the width property. This will allow the items to have enough width to sit side by side.
+
+Important Note: Flexbox/CSS Grid takes care of floating/aligning elements on a webpage very nicely; however, these are more advanced technieques and are not covered in this CSS Introduction/Cheatsheet.
+
+You should alway create a clear fix <div class="clr"></div> that is global to reset the float for the next elements below otherwise this will cause problems for elements that come after float items and this will mess the layout/style of your webpage. Refer to the top where we added the global clr class for the HTML div class of clr.
+*/
+
+  #main-block{
+    float: left;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  #side-bar{
+    float: left;
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+
+/* ===================================================================
+------------Positioning------------
+======================================================================
+Positioning Properties in CSS:
+Static    = Default (render elements in the order of the document flow).
+Relative  = Element is positioned relative to its normal position but we can add properties such as top,left, right, bottom and push it to where we want.
+Absolute  = Allows us to target any position we want inside a Relative position.
+Fixed     = Fixed position to a browser window.
+Initial   = Sets the property to its Default value.
+Inherit   = Inherit the property of its parent element.
+*/
+  .p-box{
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: 30px;
+  }
+
+/* 
+  .p-box h1{
+    position: absolute;
+    top: 40px;
+  }
+In the position example above, because the absolute value does not have a relative position this will move the element from the top of the whole webpage i.e. the h1 Hello element will move 40px down from the top of the webpage rather than its current or relative position. In order to fix this we add position: relative; to the parent selector .p-box as see in the example below. We can now move he Hello element wherever we want from the relative position.
+*/
+  .p-box{
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: 30px;
+    position: relative;
+    background-image: url("../images/bgimage.jpg");
+    background-size: 800px 500px;
+    background-position: 50px 30px; /* push the bg over 50px (overlap/image repeat) and down 30px */
+    background-repeat: no-repeat; /* stops repeat of bckground-position property above */
+    /* background-position: centre centre; this will centre horoizontaly or vertically or background-position: centre top; which centres the top. */
+  }
+  .p-box h1{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+  }
+  .p-box h2{
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+  }
+/* File Path .. means move up a folder directory. In our example above the image is located in an images folder outside the CSS folder (style.css is located in the CSS folder). We will need to navigate to the image folder directory from our current CSS folder - hence we use ../images/[file name] as the syntax.
+
+The fixed position fixes the element to the webpage and will not move regardless if scroll up or down the webpage. In the example below the fix-me element is fixed 400px from the top of the browser and 0px from the left of the browser.
+*/
+  .fix-me{
+    position: fixed;
+    top: 400px;
+    left: 0px;
+  }
+
+
+/* ===================================================================
+------------Pseudo Elements------------
+====================================================================== 
+We can target whatever we want using the psudo elements. There are many psudo elements.
+*/
+
+.my-list li:first-child{
+    background: red;
+  }
+
+  .my-list li:last-child{
+    background: blue;
+  }
+
+  .my-list li:nth-child(5){
+    background: yellow;
+  }
+/* we can target all even or odd for example:
+  .my-list li:nth-child(even){
+    background: grey;
+  }
+    or
+  .my-list li:nth-child(odd){
+    background: grey;
+  }
+*/
+
+
+/* ===================================================================
+------------End Comments------------
+======================================================================
+There are many CSS properties but the above should provide a solid foundation for CSS. You should start to play around with CSS by building CSS projects and do some research for yourself using the WWW as reference.
+Useful Links and resources can be found on the Readme file. 
+
+View the MyWebsite Example project example that covers everything we have learned above.
+*/
+
+.MyWebsiteExample{
+  position: fixed;
+  top: 20px;
+  right: 0;
+}

@@ -1,0 +1,161 @@
+=======================================================================
+Git Repository Through Terminal Command (MAC)
+=======================================================================
+
+Step 1:
+   - Login to Git-hub and create a new repository (project) and name the repository (Descriptions are optional).
+   - When creating the new repository do not tick the "Initialize this repository with a README" checkbox. 
+   - Click the "Create Repository" button (you will see a quick-setup guide for the new repository).
+
+Step 2:
+   - Open Terminal and enter the following commands (refer to Terminal Command Line Notes section to understand the different Terminal commands):
+      a. cd folderpath 
+         (<ove to the desired directory and use ls to confirm the current directory you are in).
+      b. mkdir FolderName 
+         (Create the directory/project folder within the current directory on your local machine).
+      c. ls FolderName 
+         (Move into the new Folder directory).
+      d. echo >> README.md 
+         (Create README.md file within the current listed directory).
+   - Minimise Terminal
+
+Step 3:
+   - Edit README.md file with a texteditor 
+   - Add other files within the directory folder using Finder/Folder View.
+
+Step 4:
+   - Return to the Terminal and enter the following commands (refer to the Git Termnal Command Line Notes (note Git must be installed on your local machine to use these commands in Terminal)):
+      a. git init 
+         (Tell the local machine that this is a git repository file - you can now start using Git commands as normal for this directory).
+      b. - git add -A 
+         (add all files within the directory to the stagind area ready for a commit).
+      c. - git status 
+         (view the status of the repository files).
+      d. git commit -m ""
+         (Commit all staged changes and add a commit message between the "").
+      e. git remote add origin https://github.com/UserName/RepositoryName.git
+         (Tell the local machine where to push local remote repository to the Git-hub origin repository - the http:// origin can be found in thr quick-setup guide Referred to in Step 1.
+      f. git push -u origin master
+         (Push the remote repository files to the Git-hub origin repository. The master branch is located remotely and we want to push the master to the cloud i.e Git-hub origin repository).
+
+=======================================================================
+Termnal Command Line Notes:
+=======================================================================
+   $ cd = Change Directory (go to the desired directory i.e. folder path)
+   $ ls (dir for windows) = Lit Directory (view all the files within the directory)
+   $ echo >> FileName.txt = create text file within the current listed directory (this will a text file with the name of FileName)
+   $ mkdir = Make Directory (create a new folder. Adding the -p flag allows you to create a parent directory with sub-directories in one command line prompt for example: 
+   
+   Example 1:
+      - mkdir -p ParentA/{SubA, SubB} 
+      This will make 1 Parent folder with 2 Subfolders (sub-directories are denoted by the syntax /{} with each subfolder separated by a comma)
+      |ParentA Folder (Parent Folder)
+         |SubA Folder (Sub Folder)
+         |SubB Folder (Sub Folder)
+
+   Example 2:
+   mkdir -p ParentA/{SubA, SubB/{Alpha, Beta},SubC,SubD/{Alpha, Delta}} 
+   This will make 1 Parent folder, 4 Subfolders & 4 sub-subfolders (sub-sub-direcotries are denoted by the syntax of adding further /{})
+   |Parent A Folder (Parent Folder)
+         |SubA Folder (Sub Folder)
+         |SubB Folder (Sub Folder)
+            |Alpha Folder  (Sub-Sub Folder)
+            |Beta Folder   (Sub-Sub Folder)
+         |SubC Folder (Sub Folder)
+         |SubD Folder (Sub Folder)
+            |Alpha Folder  (Sub-Sub Folder)
+            |Beta Folder   (Sub-Sub Folder)
+
+*Directories = Folders/Folder Paths
+
+=======================================================================
+Git Termnal Command Line Notes:
+=======================================================================
+Make sure to be within the repository folder on your local machine before running these commands i.e. use CD to move to the git repository folder within Terminal. 
+   - git innit = Tell the local machine that the current directory is a git repository.
+   - git clone http:// = Clones the git repository to your local machine (get the http:// from Git-hub "Clone or download" button when viewing a repository).
+   - git status = Check for status of any changes made to the directory.
+   - git add FileName = add FileName to the staging area.
+   - git add . = add all files within the directory to the stagind area.
+   - git add -A = add all files within the directory to the stagind area.
+   - git commit -m "" = Commit the changes and add a commit message between the "".
+   - git push = push files to the GitHub repository.
+   - git Pull = pull repository branch from the GitHub repository.
+   - git commit --amend -m "" = Amend last commit message.
+   - git config --global user.name = view commit User Name.
+   - git config --global user.email = view commit User Email Address.
+   - git remote add origin https:// = adds the origin repository for the local machine to push to.
+   - git push -u origin master = push local machine repository to the (Git-hub) origin repository.
+
+
+=======================================================================
+Setting up Git UserName and Email for Push request made through Terminal:
+=======================================================================
+Commit Username Terminal Setup:
+   1. Set/Change Git Username:
+      a. git config --global user.name "Name"
+   2. Confirm Commit Username has changed:
+      b. git config --global user.name
+      (Changing username for a single repository remove the --global flag).
+
+Commit Email Address Terminal Setup:
+   1. Set/Change Commit Email Address:
+      a. git config --global user.email "email@example.com"
+   2. Confirm Commit Email Address has changed:
+      b. git config --global user.email
+      (Changing email address for a single repository remove the --global flag)
+
+To use your no-reply email address provided by Git-hub:
+   - Go to your personal settings
+   - Select Emails from the side menu
+   - Tick the "Keep my email address private" checkbox and Git-hub should provide you with a no-reply email address.
+   - Follow the Commit Email Address config in Terminal to update your email to the Git-hub provided no-reply email address.
+
+
+=======================================================================
+Amend/Resetting last Commit:
+=======================================================================
+Edit/Amend the last Commit:
+To edit your last commit, you can simply use Git's amend feature. It allows you to correct the last commit's message as well as add more changes to it - for example:
+   
+   $ git commit --amend -m "This is the correct message"
+
+To add some more changes to that last commit, you can simply stage them as normal and then commit again - for example:
+   $ git add some/changed/file.ext
+   $ git commit --amend -m "commit message"
+
+To undo/reset the last commit:
+Reset will rewind your current HEAD branch to the specified revision. In our example below, we'd like to return to the one before the current revision - effectively making our last commit undone.
+Note the --soft flag: this makes sure that the changes in undone revisions are preserved. After running the command, you'll find the changes as uncommitted local modifications in your working copy.   
+
+   $ git reset --soft HEAD~1
+
+If you don't want to keep these changes use the --hard HEAD command.
+
+   $ git reset --hard HEAD~1
+
+
+=======================================================================
+Visual Studio Code Source Control Tab - Control Codes:
+=======================================================================
+In Visual Studio Code Source Control Tab, you will notice files have letters next to them. Below are a list of Status Codes and Descriptions:
+   U = Uncommitted Local Update
+   M = Locally Modified
+   A = Locally Added
+   D = Locally Deleted
+   I = Ignoted
+   R = Replaced in the depository
+   ? = Not under Source Control 
+   ! = Item is missing (e.g. you moved or deleted it without using svn).
+   - = Contents of a folder have mixed status; display the contents to see individual status
+
+refer to for more Status Codes: http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.status.html
+
+
+=======================================================================
+Additonal Git Guides:
+=======================================================================
+https://help.github.com/
+https://www.git-tower.com/learn/git/faq
+http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.status.html
+=======================================================================

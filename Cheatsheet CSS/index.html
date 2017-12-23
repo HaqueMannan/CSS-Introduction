@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Cheat Sheet</title>
+
+
+<!-- Adding CSS Methods -->
+  <!-- Internal CSS Tag are always located in the Head of HTML -->
+  <style type="text/css">
+      h1.InternalCSS{
+        color:blue;
+      }
+  </style>
+
+  <!-- External CSS - using the HTML link tag to link to the External CSS file. Styes links should be placed in the Head of the HTML -->
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+
+  <!-- Special Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+</head>
+<body>
+
+<!-- Adding CSS Methods -->
+  <!-- Inline CSS Example: Avoid at all cost -->
+  <h1 style="color:red">Inline CSS</h1>
+
+  <!--Inernal CSS Example: Try to avoid this as you can only use this CSS within this file only -->
+  <h1 class="InternalCSS  ">Internal CSS</h1>
+
+  <!-- External CSS Example: You should create a CSS folder to hold all CSS files -->
+  <h1 id="ExternalCSS">External CSS</h1>
+
+  <!-- Body Element (Selector) Formatting -->
+  <h1>Body Elements</h1>
+
+  <div class="container">
+    <!-- web-safe fonts CSS Example -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi totam pariatur tenetur repellendus maiores quam accusantium delectus iste neque voluptate harum saepe minus repudiandae vel distinctio eligendi perspiciatis, id officiis, exercitationem placeat! Iste delectus similique quam, labore quidem dolorem? Praesentium repellat, amet tempora minus illo a quisquam nihil modi.</p>
+    
+    <!-- Special fonts CSS Example -->
+    <p class="specialFonts">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui expedita cupiditate dolorum iste error magnam nesciunt distinctio sapiente vel aperiam. Dolor dicta quisquam iusto maiores repudiandae mollitia, modi officia doloribus?</p>
+
+    <!-- Font Properties CSS shortcut -->
+    <p class="fontShorthand">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, maxime?</p>
+ 
+    <p class=textDecorations>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus qui dolorem ut quibusdam atque perferendis tempore beatae, doloribus illum rem debitis veniam? Saepe, accusamus unde! Nesciunt reiciendis accusantium eveniet quaerat.</p>
+
+    <!-- Categories CSS Example -->
+    <div class="categories">
+        <h2>Categories</h2>
+          <Ul>
+            <li><a href="#">Category 1</a></li>
+            <li><a href="#">Category 2</a></li>
+            <li><a href="#">Category 3</a></li>
+            <li><a href="#">CSS Stylesheet</a></li>
+          </Ul>
+    </div>
+
+    <!-- Forms CSS Example -->
+    <form class="my-form">
+        <div class="form-group">
+          <label>Name: </label>
+          <input type="text" name="name">
+        </div>
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="text" name="email">
+        </div>
+        <div class="form-group">
+            <label>Message: </label>
+            <textarea name="message"></textarea>
+        </div>
+        <input class="button" type="submit" value="Submit" name="">
+    </form>
+
+    <!-- Alignment & Floating CSS Example -->
+    <div class="block">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, amet dolorem iusto quae dignissimos voluptates repellat nam accusamus adipisci perspiciatis? Deserunt temporibus ipsum aliquam voluptate.</p>
+    </div>
+    <div class="block">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, amet dolorem iusto quae dignissimos voluptates repellat nam accusamus adipisci perspiciatis? Deserunt temporibus ipsum aliquam voluptate.</p>
+    </div>
+    <div class="block">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, amet dolorem iusto quae dignissimos voluptates repellat nam accusamus adipisci perspiciatis? Deserunt temporibus ipsum aliquam voluptate.</p>
+    </div>
+
+    <div class="clr"></div> <!-- clear the float styling above for the next elements below, this prevents the webpage from messing up from float stylings on other elements. -->
+
+    <div id="main-block">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, incidunt ab molestias mollitia explicabo molestiae voluptatibus ad quo eaque consequatur, veniam nulla, iure et voluptates maxime hic amet. Numquam mollitia saepe cum sapiente, commodi sint asperiores fugiat dolores distinctio magnam ea in hic doloremque consectetur!</p>
+    </div>
+
+    <div id="side-bar">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident velit hic voluptatem consequuntur dolores praesentium iure facere doloribus rerum, id eligendi sint, consequatur neque explicabo quis esse in tempora? Nesciunt!</p>
+    </div>
+
+    <div class="clr"></div>
+    
+    <!-- Positioning: Relative/Absolute CSS Example -->
+    <div class="p-box">
+      <h1>Hello</h1>
+      <h2>Goodbye</h2>
+    </div>
+
+    <!-- Positioning: Fixed CSS Example -->
+    <!-- The element below has two class of fix-me and button -->
+    <a href="" class="fix-me button">Good Morning</a> 
+
+
+    <!-- Pseudo Classes CSS Example -->
+    <ul class="my-list">
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+      <li>List Items</li>
+    </ul>
+
+    <!-- MyWebsite Example -->
+    <a href="../MyWebsite/index.html" class="button MyWebsiteExample">Go to MyWebsite Example</a>
+
+  </div> <!-- Container End -->
+
+<div style="margin-top:500px;"></div> <!-- allows you to scroll the bottom content to the middle of the page -->
+
+</body>
+</html>
